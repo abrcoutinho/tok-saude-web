@@ -1,0 +1,287 @@
+.meeting-card
+	flex: 1
+	background-color: rgba($neutral_10, .8)
+	border-radius: 1.5rem
+	box-sizing: border-box
+	border: solid 2px $primary
+	position: relative
+	padding: .5rem
+	overflow: hidden
+	// display: flex
+
+	& > div
+		flex: 0 0 50%
+		box-sizing: border-box
+		padding: .75rem
+		border-radius: 1rem
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		position: relative
+		z-index: 2
+
+		&:first-of-type
+			background-color: rgba($neutral_10, .6)
+			position: relative
+			z-index: 3
+
+			time
+				display: block
+				em
+					display: block
+					font-size: 3.5rem
+					font-weight: 300
+					line-height: 3.5rem
+				small
+					display: block
+					font-size: 1.75rem
+					font-weight: 400
+					line-height: 2rem
+			strong
+				font-size: 1.125rem
+				line-height: 1.25rem
+				font-weight: 700
+				margin-top: -2.5rem
+				position: relative
+
+				&::before
+					content: ''
+					width: 2.5rem
+					height: 2.5rem
+					background-color: $secondary
+					mask-image: url("../img/icons/medicine.svg")
+					mask-size: contain
+					position: absolute
+					top: -120%
+					left: 0
+
+			button
+				border: none
+				background-color: transparent
+				text-align: left
+				font-size: .875rem
+				text-decoration: underline
+				cursor: pointer
+
+
+		&:last-of-type
+			text-align: right
+
+			code
+				display: block
+				line-height: 1.25rem
+				font-weight: bold
+				font-size: 1.1rem
+			mark
+				display: inline-block
+				background-color: $secondary
+				color: $neutral_10
+				// font-size: .875rem
+				font-weight: 700
+				line-height: 1.25rem
+				padding: 0 .5rem
+				border-radius: 2rem
+				margin-top: .5rem
+			time
+				display: inline-block
+				font-size: 1.75rem
+				font-weight: 400
+				line-height: 2rem
+				margin-top: .5rem
+				position: relative
+
+				&::before
+					content: ''
+					width: 1rem
+					height: 1rem
+					background-color: $secondary
+					mask-image: url("../img/icons/clock.svg")
+					mask-size: contain
+					position: absolute
+					top: 50%
+					left: -1.5rem
+					transform: translateY(-50%)
+
+			strong
+				display: inline-block
+				font-size: 1.75rem
+				font-weight: 500
+				line-height: 2rem
+				position: relative
+
+				&::before
+					content: ''
+					width: 1.25rem
+					height: 1.25rem
+					background-color: $secondary
+					mask-image: url("../img/icons/hour-glass.svg")
+					mask-size: contain
+					position: absolute
+					top: 50%
+					left: -1.75rem
+					transform: translateY(-50%)
+
+			p
+				font-size: .875rem
+				line-height: 1rem
+				position: relative
+
+				&::before
+					content: ''
+					width: 2.5rem
+					height: 2.5rem
+					background-color: $secondary
+					mask-image: url("../img/icons/videocall.svg")
+					mask-size: contain
+					position: absolute
+					top: -3rem
+					right: 0
+
+			label
+				display: block
+				font-size: .875rem
+				line-height: 1rem
+				margin: .75rem 0 2rem
+			b
+				display: block
+				font-size: .875rem
+				font-weight: 800
+				animation: blink .5s alternate infinite
+
+
+
+
+			footer
+				position: relative
+				z-index: 2
+				display: flex
+				flex-direction: column
+				align-items: flex-end
+
+				&::before
+					content: ''
+					// width: 24rem
+					// height: 24rem
+					background-color: $primary
+					position: absolute
+					top: 50%
+					left: 50%
+					transform: translate(-50%, -50%)
+					border-radius: 30%
+					filter: blur(3rem)
+					z-index: -1
+					animation: pulse 1.4s alternate infinite
+
+				label
+					font-size: 1.75rem
+					line-height: 2rem
+					margin: .75rem 0 1rem
+					position: relative
+					z-index: 3
+
+			// Entrar button
+			button
+				width: 5rem
+				height: 5rem
+				border-radius: 100%
+				background-color: $secondary
+				border: none
+				cursor: pointer
+				position: relative
+				display: flex
+				align-items: center
+				justify-content: center
+				transition: transform .3s cubic-bezier(0.34, 1.56, 0.64, 1)
+
+				i
+					width: 3.5rem
+					height: 3.5rem
+					background-color: $primary
+					mask-image: url("../img/icons/down.svg")
+					mask-size: contain
+					transform: rotate(-90deg)
+
+				&::before
+					content: ''
+					width: 5.5rem
+					height: 5.5rem
+					outline: dashed 1px $secondary
+					position: absolute
+					top: 50%
+					left: 50%
+					border-radius: 100%
+					animation: spin 1s linear infinite
+
+				&:hover
+					transform: scale(1.08)
+
+
+	// calendar
+	&::before
+		content: ''
+		width: 8.75rem
+		height: 8.75rem
+		background-color: $secondary
+		mask-image: url("../img/icons/schedule.svg")
+		mask-size: contain
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+		opacity: .1
+
+	// loading
+	&::after
+		content: ''
+		width: 10.5rem
+		height: 10.5rem
+		background-color: $primary
+		mask-image: url("../img/loading.svg")
+		mask-size: contain
+		position: absolute
+		top: 50%
+		left: 50%
+		animation: loading 3s linear infinite
+		transform-origin: 0% 0%
+
+
+
+
+@keyframes loading
+	0%
+		transform: rotate(0) translate(-50%, -50%)
+	25%
+		transform: rotate(90deg) translate(-50%, -50%)
+	50%
+		transform: rotate(180deg) translate(-50%, -50%)
+	75%
+		transform: rotate(270deg) translate(-50%, -50%)
+	100%
+		transform: rotate(360deg) translate(-50%, -50%)
+
+@keyframes blink
+	from
+		opacity: 1
+	to
+		opacity: .5
+
+@keyframes spin
+	from
+		transform: translate(-50%, -50%) rotate(0)
+	to
+		transform: translate(-50%, -50%) rotate(45deg)
+
+@keyframes pulse
+	from
+		width: 20rem
+		height: 20rem
+	to
+		width: 30rem
+		height: 30rem
+
+
+
+@include for-size(tablet_md)
+	.meeting-card
+		flex: 0 0 30rem
+

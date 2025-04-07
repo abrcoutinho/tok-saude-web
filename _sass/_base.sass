@@ -1,0 +1,170 @@
+
+// color themes
+
+$primary: #5FC9FE // cor de destaque
+$secondary: #4249E1 // cor mais escura
+
+$neutral_0: #FFFFFF
+$neutral_10: #ECECEC
+$neutral_90: #202020
+
+$alert: #D02323
+$confirm: #14BC5F
+$schedule: #3485FF
+
+
+$ease: cubic-bezier(0.5,0,0,1)
+
+
+// resets
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, a, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, nav, section, menu, time, mark, audio, video, canvas
+  margin:     0
+  padding:    0
+  border:     0
+  outline:    none
+
+body, input, textarea, button, select
+  color: $secondary
+  font-family: "Outfit", sans-serif
+  font-optical-sizing: auto
+  font-weight: 500
+  font-style: normal
+  font-size: 1rem
+
+body
+  overflow: hidden
+  background-color: $primary
+  display: grid
+  place-content: center
+  grid-auto-flow: column
+  width: 100vw
+  height: 100dvh
+
+a
+  text-decoration: none
+ul, ol, dl
+  list-style: none
+img
+  display: block
+em
+  font-style: normal
+
+
+// selection
+::selection
+  background: $primary
+  color: $neutral_90
+  text-shadow: none
+
+
+// placeholder
+::-webkit-input-placeholder
+  color: $secondary
+::-moz-placeholder
+  color: $secondary
+\:-moz-placeholder
+  color: $secondary
+\:-ms-input-placeholder
+  color: $secondary
+
+
+// scrollbars webkit
+::-webkit-scrollbar
+  width: .75rem
+  background-color: transparent
+
+// ::-webkit-scrollbar-track
+  // border-radius: .25rem
+
+::-webkit-scrollbar-thumb
+  background-color: $primary
+  border-right: solid .15rem $neutral_10
+  border-left: solid .25rem $neutral_10
+
+  &:hover
+    border-left: none
+  
+// ::-webkit-scrollbar-thumb:window-inactive
+//   background: $neutral_20
+//   border: solid 1px red
+
+::-webkit-scrollbar-button:start,
+::-webkit-scrollbar-button:end
+  height: 2rem
+
+
+
+// media queries
+@mixin for-size($size)
+  @if $size == phone
+    @media (max-width: 40rem)
+      @content
+  @else if $size == tablet_md
+    @media (max-width: 48rem)
+      @content
+  @else if $size == tablet_lg
+    @media (max-width: 64rem)
+      @content
+  @else if $size == desk_sm
+    @media (max-width: 1280px)
+      @content
+  @else if $size == desk_md
+    @media (max-width: 1536px)
+      @content
+
+
+$main_column: 75rem
+
+body::before
+  content: ''
+  width: 100%
+  max-width: $main_column
+  height: 40%
+  background: url("../img/arc.svg") no-repeat center top
+    size: 100% auto
+  position: absolute
+  top: 0
+  left: 50%
+  transform: translateX(-50%)
+  filter: blur(6rem)
+
+.app
+  width: calc(100vw - 1.25rem)
+  height: calc(100dvh - 1.25rem)
+  background-color: rgba($neutral_10, .9)
+  border-radius: 3.5rem
+  overflow: hidden
+  box-sizing: border-box
+  position: relative
+
+.content
+  width: 100%
+  height: 100%
+  margin: 0 auto
+  overflow-y: auto
+  overflow-x: hidden
+  position: relative
+  padding: 0 1rem
+  box-sizing: border-box
+
+
+@include for-size(desk_sm)
+  .app
+    width: calc(100vw - 1.5rem)
+    height: calc(100dvh - 1.5rem)   
+
+@include for-size(tablet_lg)
+  .app
+    width: calc(100vw - .75rem)
+    height: calc(100dvh - .75rem)  
+
+@include for-size(phone)
+  .app
+    width: calc(100vw - .4rem)
+    height: calc(100dvh - .4rem)  
+    border-radius: 1.5rem
+
+
+
+
+

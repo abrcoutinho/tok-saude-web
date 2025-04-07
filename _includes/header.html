@@ -1,0 +1,38 @@
+<header class="header">
+	<figure>
+		<a href="{{ site.url }}" title="Marca">
+			<img src="img/logo.svg" alt="Marca">
+		</a>
+	</figure>
+
+	<hgroup>
+		<h1>Pronto Atendimento Digital</h1>
+		<p>Portal do beneficiário</p>
+	</hgroup>
+
+	<div class="account">
+		<div class="notification unread">
+			<button type="button" title="Notificações">
+				<i></i>
+				<small></small>
+			</button>
+		</div>
+
+		<div class="user">
+			<button type="button" title="Minha conta" onclick="showUserFloatingMenu()">
+				<i></i>
+				<span>
+					<dfn>José S.</dfn>
+					<em>Essential</em>
+				</span>
+				<i></i>
+			</button>
+		</div>
+	</div>
+
+	<!-- user floating menu -->
+	<ul class="user-floating-menu">
+		<li><a href="{{ site.url }}/account" title="Meu perfil" class="account-bt"><i></i>Meu perfil</a></li>
+		<li><a href="#" title="Sair" class="logout-bt"><i></i>Sair</a></li>
+	</ul>
+</header>

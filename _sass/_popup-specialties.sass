@@ -1,0 +1,100 @@
+.popup-specialties
+	width: 31.25rem
+	height: 31rem
+	background-color: $secondary
+	border-radius: 2rem
+	color: $neutral_10
+	overflow-y: auto
+	overflow-x: hidden
+	box-sizing: border-box
+	box-shadow: 0 1rem 1rem rgba(0,0,0,.3)
+	position: absolute
+	top: 0
+	left: 0
+	z-index: 5
+	display: none
+
+	&.visible
+		display: block
+
+	&::-webkit-scrollbar-thumb
+		background-color: $neutral_10
+		border-right: solid .15rem $secondary
+		border-left: solid .25rem $secondary
+		display: none
+
+	dt
+		height: 5rem
+		padding: 0 1rem 0 2rem
+		display: flex
+		align-items: center
+		justify-content: space-between
+		background-color: $secondary
+		position: sticky
+		top: 0
+
+		strong
+			font-weight: 800
+
+		button
+			width: 2.5rem
+			height: 2.5rem
+			border: none
+			cursor: pointer
+			background-color: transparent
+			display: flex
+			justify-content: center
+			align-items: center
+			transition: transform .3s cubic-bezier(0.34, 1.56, 0.64, 1)
+
+			&:hover
+				transform: scale(1.08)
+
+			i
+				width: 1.5rem
+				height: 1.5rem
+				background-color: $neutral_10
+				border-radius: .25rem
+				position: relative
+
+				&::after
+					content: ''
+					width: 1.5rem
+					height: 1.5rem
+					background-color: $secondary
+					mask-image: url("../img/icons/close.svg")
+					mask-size: contain
+					position: absolute
+					top: 0
+					left: 0
+
+	dd
+		padding: 0 2rem
+		line-height: 3.5rem
+		overflow: hidden
+		text-overflow: ellipsis
+		white-space: nowrap
+		font-size: 1.75rem
+		font-weight: 300
+
+
+
+@include for-size(desk_sm)
+	.popup-specialties
+		position: fixed
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+
+
+@include for-size(phone)
+	.popup-specialties
+		width: 100vw
+		border-radius: 2rem 2rem 0 0
+		top: initial
+		bottom: 0
+		left: 0
+		transform: initial
+		box-shadow: 0 -1rem 1rem rgba(0,0,0,.3)
+
+

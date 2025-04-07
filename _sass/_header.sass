@@ -1,0 +1,236 @@
+.header
+	max-width: $main_column
+	margin: 2.5rem auto 0
+	height: 4.5rem
+	display: flex
+	gap: .5rem
+	align-items: center
+	position: relative
+
+	figure
+		flex: 0 1 100%
+		a
+			display: inline-block
+		img
+			max-width: 16rem
+			max-height: 4.5rem
+	hgroup
+		flex: 0 0 31.25rem
+		padding: 0 1.75rem
+		box-sizing: border-box
+		h1
+			font-size: 1.5rem
+		p
+			font-size: .875rem
+			text-transform: uppercase
+
+	.account
+		flex: 0 1 100%
+		justify-content: flex-end
+		display: flex
+		align-items: center
+
+	.notification
+		padding: .25rem
+
+		button
+			width: 2.5rem
+			height: 2.5rem
+			background-color: rgba($secondary, .1)
+			border-radius: 100%
+			border: none
+			display: flex
+			justify-content: center
+			align-items: center
+			position: relative
+			cursor: pointer
+
+			// bell icon
+			i
+				width: 1.5rem
+				height: 1.5rem
+				background-color: $secondary
+				mask-image: url("../img/icons/bell.svg")
+				mask-size: contain
+
+			// ball
+			small
+				width: .5rem
+				height: .5rem
+				background-color: $alert
+				border-radius: 100%
+				position: absolute
+				top: .5rem
+				right: .4rem
+				opacity: 0
+				transition: opacity .4s
+
+		&.unread small
+			opacity: 1
+
+	.user
+		padding: .25rem
+
+		button
+			height: 2.5rem
+			padding: .125rem
+			background-color: rgba($secondary, .1)
+			border-radius: 2.5rem
+			border: none
+			display: flex
+			align-items: center
+			cursor: pointer
+
+			span
+				padding-right: 1rem
+			dfn
+				display: block
+				font-style: normal
+				text-align: left
+				font-size: .875rem
+				line-height: 1.2
+			em
+				display: block
+				font-size: .75rem
+				font-weight: 800
+				line-height: 1.2
+
+			i
+				width: 2.25rem
+				height: 2.25rem
+				border-radius: 100%
+				background-color: $secondary
+				position: relative
+
+				&:first-of-type
+					mask-image: url("../img/icons/user.svg")
+					mask-size: contain
+				&:last-of-type::after
+					content: ''
+					width: 1rem
+					height: 1rem
+					mask-image: url("../img/icons/gear.svg")
+					mask-size: contain
+					background-color: $neutral_10
+					position: absolute
+					top: 50%
+					left: 50%
+					transform: translate(-50%, -50%)
+
+
+	.user-floating-menu
+		width: 12rem
+		box-sizing: border-box
+		position: absolute
+		top: 3.5rem
+		right: 0
+		z-index: 10
+		background-color: $neutral_10
+		border-radius: 1rem
+		box-shadow: 0 .5rem 1rem rgba(0,0,0,.1)
+		overflow: hidden
+		outline: solid 1px $secondary
+		visibility: hidden
+		opacity: 0
+
+		&.visible
+			visibility: visible
+			opacity: 1
+			top: 3.75rem
+			transition: top .3s $ease, opacity .2s
+
+		a
+			height: 3rem
+			display: flex
+			align-items: center
+			gap: .5rem
+			padding: 0 1rem
+			color: $neutral_90
+
+			&.account-bt i
+				mask-image: url("../img/icons/person.svg")
+			&.logout-bt i
+				mask-image: url("../img/icons/logout.svg")
+
+			i
+				width: 1.5rem
+				height: 1.5rem
+				background-color: $secondary
+				mask-size: contain
+
+			&:hover
+				background-color: rgba($secondary, .05)
+				transition: background-color .2s
+
+
+
+
+
+@include for-size(desk_sm)
+	.header
+		flex-wrap: wrap
+		height: auto
+		gap: 0
+		max-width: 80vw
+
+		figure
+			order: 1
+			flex: 0 0 50%
+
+		hgroup
+			order: 3
+			flex: 0 0 100%
+			text-align: center
+			padding: 1.5rem 0
+
+		.account
+			order: 2
+			flex: 0 0 50%
+
+
+
+@include for-size(tablet_md)
+	.header
+		figure
+			flex: 1 0 auto
+
+		.account
+			flex: 0 0 auto
+
+
+@include for-size(phone)
+	.header
+		max-width: initial
+		margin: 1rem auto 0
+
+		hgroup
+			h1
+				font-size: 6vw
+			p
+				font-size: 4vw
+
+		.user
+			button
+				i:last-of-type
+					display: none
+				span
+					display: none
+
+		.user-floating-menu
+			width: 100vw
+			position: fixed
+			top: initial
+			bottom: -100%
+			padding: 1rem 1rem 2.5rem
+			border-radius: 1.5rem 1.5rem 0 0
+			box-shadow: 0 -1rem 2rem rgba(0,0,0,.2)
+
+			&.visible
+				top: initial
+				bottom: 0
+				transition: bottom .5s $ease, opacity .2s
+
+			a
+				height: 3.5rem
+				gap: 1.5rem
+				font-size: 1.25rem
