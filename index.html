@@ -27,8 +27,11 @@ layout: default
 
 	<!-- PA status: available | waiting | ready -->
 	<form class="emergency-care available">
-		<label>Paciente</label>
-		<ul>
+
+		<!--mobile only--><label id="labelChange2">Paciente</label>
+		<!--mobile only--><button type="button" class="patient-selected" onclick="mobPatientList();">José da Silva</button>
+
+		<ul class="patients-list">
 			<li>
 				<button type="button" class="active">
 					<em>José</em>

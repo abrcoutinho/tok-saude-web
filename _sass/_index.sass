@@ -92,10 +92,12 @@
 						background-color: $primary
 						color: $secondary
 
-	& > label
+	& > label,
+	.patient-selected
 		display: none
 
-	ul
+
+	.patients-list
 		flex: 0 0 11.25rem
 		height: 100%
 		overflow-y: auto
@@ -429,7 +431,7 @@
 			top: .5rem
 			left: 3.25rem
 			background-color: $secondary
-			z-index: 2
+			z-index: 6
 
 			&::before
 				content: ''
@@ -444,23 +446,54 @@
 				top: 0
 				left: -2.75rem
 
-		ul
+		.patient-selected
+			display: block
 			flex: 0 0 3.5rem
-			overflow-y: hidden
+			box-sizing: border-box
+			padding: .75rem 2.75rem 0
+			position: relative
+			border: none
+			background-color: transparent
+			color: $neutral_10
+			width: 100%
+			cursor: pointer
+			text-align: left
+			overflow: hidden
+			font-size: 1.5rem
+			line-height: 2
+			
+			&::after
+				content: ''
+				width: 2rem
+				height: 2rem
+				background-color: $neutral_10
+				mask-image: url("../img/icons/medicine.svg")
+				mask-size: contain
+				position: absolute
+				top: 1.25rem
+				right: .5rem
 
-			&.expanded
-				// flex: 0 0 auto
-				// overflow-y: auto
-				max-height: 3.5rem
-				overflow-y: initial
-				z-index: 6
 
-				li
-					background-color: $secondary
-					&:last-child
-						padding-bottom: 1rem
-				button
-					opacity: 1
+
+		.patients-list
+			width: 100%
+			height: 24rem
+			background-color: $secondary
+			border-radius: 2rem
+			color: $neutral_10
+			overflow-y: auto
+			overflow-x: hidden
+			box-sizing: border-box
+			padding: .5rem
+			box-shadow: 0 1rem 1rem rgba(0,0,0,.3)
+			position: absolute
+			top: 0
+			left: 0
+			z-index: 5
+			display: none
+
+			&.visible
+				display: block
 
 			button
 				max-width: initial

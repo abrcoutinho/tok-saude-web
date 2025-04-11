@@ -10,12 +10,13 @@
 		<p>Portal do beneficiário</p>
 	</hgroup>
 
-	<div class="account">
+	<div class="header-account">
 		<div class="notification unread">
-			<button type="button" title="Notificações">
+			<button type="button" title="Notificações" onclick="showPopupNotifications();">
 				<i></i>
 				<small></small>
 			</button>
+			{% include popup-notifications.html %}
 		</div>
 
 		<div class="user">

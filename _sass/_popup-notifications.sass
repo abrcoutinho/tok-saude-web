@@ -1,0 +1,82 @@
+.popup-notifications
+	width: 16rem
+	position: absolute
+	top: 3rem
+	right: 0
+	z-index: 6
+	border-radius: 1rem
+	overflow-y: hidden
+	background-color: $neutral_10
+	box-shadow: 0 .25rem 1.25rem rgba(0, 0, 0, .25)
+	visibility: hidden
+	opacity: 0
+
+	&.visible
+		visibility: visible
+		opacity: 1
+		top: 2.75rem
+		transition: top .3s $ease, opacity .2s
+
+
+
+	& > strong
+		display: flex
+		align-items: center
+		height: 2.5rem
+		background-color: $secondary
+		color: $neutral_10
+		font-size: .875rem
+		font-weight: 500
+		padding: 0 .75rem
+
+
+	ol
+		max-height: 26rem
+		overflow-y: auto
+		&::-webkit-scrollbar-thumb
+			background-color: rgba($secondary, .2)
+
+	li
+		display: flex
+		flex-direction: column
+		color: $neutral_90
+		border-bottom: solid 1px rgba($secondary, .1)
+
+		header
+			padding: .5rem .75rem 0
+			font-size: .875rem
+			line-height: 1.5rem
+			display: flex
+			justify-content: space-between
+
+			time
+				position: relative
+				padding-left: 2rem
+
+				&::before
+					content: ''
+					width: 1.5rem
+					height: 1.5rem
+					background-color: $secondary
+					mask-image: url("../img/icons/bell.svg")
+					mask-size: contain
+					position: absolute
+					top: 0
+					left: 0
+
+		a
+			color: $neutral_90
+			&:hover
+				color: rgba($secondary, .9)
+		p
+			padding: 0 .75rem
+			font-size: 1rem
+
+		footer
+			color: #92929D
+			display: flex
+			justify-content: space-between
+			padding: 0 .75rem .5rem
+		small,
+		code
+			font-size: .875rem
