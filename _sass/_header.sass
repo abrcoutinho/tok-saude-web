@@ -15,20 +15,53 @@
 			max-width: 16rem
 			max-height: 4.5rem
 	hgroup
-		flex: 0 0 31.25rem
-		padding: 0 1.75rem
+		// flex: 0 0 31.25rem
+		flex: 0 0 auto
 		box-sizing: border-box
 		h1
 			font-size: 1.5rem
+			display: flex
+			align-items: center
+			gap: .5rem
+			i
+				width: 1.5rem
+				height: 1.5rem
+				background-color: $secondary
+				mask-repeat: no-repeat
+				mask-size: contain
 		p
 			font-size: .875rem
 			text-transform: uppercase
 
-	.header-account
+	.account
 		flex: 0 1 100%
 		justify-content: flex-end
 		display: flex
 		align-items: center
+
+	.menu_bt
+		padding: .25rem
+
+		button
+			width: 2.5rem
+			height: 2.5rem
+			background-color: rgba($secondary, .1)
+			border-radius: 100%
+			border: none
+			display: flex
+			justify-content: center
+			align-items: center
+			position: relative
+			cursor: pointer
+
+			i
+				width: 1.5rem
+				height: 1.5rem
+				background-color: $secondary
+				mask-image: url("../img/icons/menu.svg")
+				mask-size: contain
+			&:hover
+				background-color: rgba($secondary, .2)
 
 	.notification
 		padding: .25rem
@@ -53,8 +86,10 @@
 				background-color: $secondary
 				mask-image: url("../img/icons/bell.svg")
 				mask-size: contain
+			&:hover
+				background-color: rgba($secondary, .2)
 
-			// ball
+			// red ball
 			small
 				width: .5rem
 				height: .5rem
@@ -81,6 +116,9 @@
 			display: flex
 			align-items: center
 			cursor: pointer
+
+			&:hover
+				background-color: rgba($secondary, .2)
 
 			span
 				padding-right: 1rem
@@ -182,9 +220,12 @@
 			order: 3
 			flex: 0 0 100%
 			text-align: center
-			padding: 1.5rem 0
+			padding: .5rem 0
 
-		.header-account
+			h1
+				justify-content: center
+
+		.account
 			order: 2
 			flex: 0 0 50%
 
@@ -195,7 +236,7 @@
 		figure
 			flex: 1 0 auto
 
-		.header-account
+		.account
 			flex: 0 0 auto
 
 

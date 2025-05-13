@@ -1,0 +1,150 @@
+---
+layout: default
+title: Plano odontológico
+class: odonto
+---
+
+<figure class="sempreodonto">
+	<img src="img/sempreodonto.png" alt="Sempre Odonto">
+	<figcaption>ANS 41465-4</figcaption>
+</figure>
+
+<form class="search-odonto">
+	<i></i>
+	<fieldset>
+		<div class="form-field">
+			<label for="tratamentos">Tipo de tratamento</label>
+			<select name="tratamentos" id="tratamentos">
+				<option value="" selected>Tratamentos</option>
+				<option value="aaa">Aaa</option>
+				<option value="bbb">Bbb</option>
+				<option value="ccc">Ccc</option>
+			</select>
+		</div>
+
+		<div class="form-field">
+			<label for="especialidade">Especialidade</label>
+			<select name="especialidade" id="especialidade" readonly disabled>
+				<option value="especialidade" selected>Especialidade...</option>
+				<option value="aaa">Aaa</option>
+				<option value="bbb">Bbb</option>
+				<option value="ccc">Ccc</option>
+			</select>
+		</div>
+
+		<div class="form-field">
+			<label for="uf">Estado (UF)</label>
+			<select name="estado" id="uf" readonly disabled>
+				<option value="estado" selected>Estado...</option>
+				<option value="AC">AC</option>
+				<option value="AL">AL</option>
+				<option value="AP">AP</option>
+				<option value="AM">AM</option>
+				<option value="BA">BA</option>
+				<option value="CE">CE</option>
+				<option value="DF">DF</option>
+				<option value="ES">ES</option>
+				<option value="GO">GO</option>
+				<option value="MA">MA</option>
+				<option value="MT">MT</option>
+				<option value="MS">MS</option>
+				<option value="MG">MG</option>
+				<option value="PA">PA</option>
+				<option value="PB">PB</option>
+				<option value="PR">PR</option>
+				<option value="PE">PE</option>
+				<option value="PI">PI</option>
+				<option value="RJ">RJ</option>
+				<option value="RN">RN</option>
+				<option value="RS">RS</option>
+				<option value="RO">RO</option>
+				<option value="RR">RR</option>
+				<option value="SC">SC</option>
+				<option value="SP">SP</option>
+				<option value="SE">SE</option>
+				<option value="TO">TO</option>
+			</select>
+		</div>
+
+		<div class="form-field">
+			<label for="cidade">Cidade</label>
+			<select name="cidade" id="cidade" readonly disabled>
+				<option value="cidade" selected>Cidade...</option>
+				<option value="aaa">Aaa</option>
+				<option value="bbb">Bbb</option>
+				<option value="ccc">Ccc</option>
+			</select>
+		</div>
+
+		<div class="form-field">
+			<label for="bairro">Bairro</label>
+			<select name="bairro" id="bairro" readonly disabled>
+				<option value="bairro" selected>Bairro...</option>
+				<option value="aaa">Aaa</option>
+				<option value="bbb">Bbb</option>
+				<option value="ccc">Ccc</option>
+			</select>
+		</div>
+	</fieldset>
+
+	<input type="submit" value=" " class="search-bt" title="Pesquisar" disabled>
+</form>
+
+<div class="odonto-box">
+
+	<div class="warning">
+		<i></i>
+		<small>Ao realizar um agendamento não esqueça de informar que você é cliente <b>SempreOdonto</b> e tenha em mãos o seu CPF.</small>
+	</div>
+
+<!-- 	<div class="empty">
+		<strong>Pesquise uma clínica ou profissional</strong>
+		{% include svg-odonto.html %}
+	</div> -->
+
+	<table>
+		<caption><span>
+			<small><i></i>Exibindo <b>23</b> resultados</small>
+			<button type="button" title="Limpar" class="clear">Limpar</button>
+		</span></caption>
+		<tr>
+			<td class="nome">
+				<strong>Kaike Lessa Campores</strong>
+				<address><i></i>Av. Presidente Vargas 123, Sala 03, Bela Vista, São Paulo - SP</address>
+			</td>
+			<td class="espec"><dfn>Cirurgia</dfn></td>
+			<td class="tel">(11) 99876-5432<i></i></td>
+			<td class="whatsapp"><a href="https://api.whatsapp.com/send?phone=55000000000&text=Ol%C3%A1,%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es" target="_blank" title="WhasApp"><u>WhasApp</u><i></i></a></td>
+			<td class="map">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1152.0314485121821!2d-46.63371583010615!3d-23.551491444258293!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59abb2b2eef1%3A0xfdb32e67a44103f5!2sCatedral%20Metropolitana%20de%20S%C3%A3o%20Paulo!5e0!3m2!1spt-BR!2sbr!4v1746664482224!5m2!1spt-BR!2sbr" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+			</td>
+		</tr>
+		<tr>
+			<td class="nome">
+				<strong>Kaike Lessa Campores</strong>
+				<address><i></i>Av. Presidente Vargas 123, Sala 03, Bela Vista, São Paulo - SP</address>
+			</td>
+			<td class="espec"><dfn>Cirurgia</dfn></td>
+			<td class="tel">(11) 99876-5432<i></i></td>
+			<td class="whatsapp"><a href="https://api.whatsapp.com/send?phone=55000000000&text=Ol%C3%A1,%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es" target="_blank" title="WhasApp"><u>WhasApp</u><i></i></a></td>
+			<td class="map">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1152.0314485121821!2d-46.63371583010615!3d-23.551491444258293!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59abb2b2eef1%3A0xfdb32e67a44103f5!2sCatedral%20Metropolitana%20de%20S%C3%A3o%20Paulo!5e0!3m2!1spt-BR!2sbr!4v1746664482224!5m2!1spt-BR!2sbr" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+			</td>
+		</tr>
+		<tr class="expanded">
+			<td class="nome">
+				<strong>Kaike Lessa Campores</strong>
+				<address><i></i>Av. Presidente Vargas 123, Sala 03, Bela Vista, São Paulo - SP</address>
+			</td>
+			<td class="espec"><dfn>Cirurgia</dfn></td>
+			<td class="tel">(11) 99876-5432<i></i></td>
+			<td class="whatsapp"><a href="https://api.whatsapp.com/send?phone=55000000000&text=Ol%C3%A1,%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es" target="_blank" title="WhasApp"><u>WhasApp</u><i></i></a></td>
+			<td class="map">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1152.0314485121821!2d-46.63371583010615!3d-23.551491444258293!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59abb2b2eef1%3A0xfdb32e67a44103f5!2sCatedral%20Metropolitana%20de%20S%C3%A3o%20Paulo!5e0!3m2!1spt-BR!2sbr!4v1746664482224!5m2!1spt-BR!2sbr" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+			</td>
+		</tr>
+	</table>
+</div>
+
+
+

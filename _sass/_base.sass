@@ -105,6 +105,12 @@ em
   @else if $size == tablet_lg
     @media (max-width: 64rem)
       @content
+  @else if $size == tablet_lg_landscape
+    @media (max-width: 64rem) and (orientation: landscape)
+      @content
+  @else if $size == tablet_lg_portrait
+    @media (max-width: 64rem) and (orientation: portrait)
+      @content
   @else if $size == desk_sm
     @media (max-width: 1280px)
       @content
@@ -129,10 +135,12 @@ body::before
   filter: blur(6rem)
 
 .app
-  width: calc(100vw - 1.25rem)
-  height: calc(100dvh - 1.25rem)
-  background-color: rgba($neutral_10, .9)
-  border-radius: 3.5rem
+  // width: calc(100vw - 1.25rem)
+  // height: calc(100dvh - 1.25rem)
+  // border-radius: 3.5rem
+  width: 100vw
+  height: 100dvh
+  background-color: rgba($neutral_10, .8)
   overflow: hidden
   box-sizing: border-box
   position: relative
@@ -148,23 +156,107 @@ body::before
   box-sizing: border-box
 
 
-@include for-size(desk_sm)
-  .app
-    width: calc(100vw - 1.5rem)
-    height: calc(100dvh - 1.5rem)   
+// @include for-size(desk_sm)
+//   .app
+//     width: calc(100vw - 1.5rem)
+//     height: calc(100dvh - 1.5rem)   
 
-@include for-size(tablet_lg)
-  .app
-    width: calc(100vw - .75rem)
-    height: calc(100dvh - .75rem)  
+// @include for-size(tablet_lg)
+//   .app
+//     width: calc(100vw - .75rem)
+//     height: calc(100dvh - .75rem)  
 
-@include for-size(phone)
-  .app
-    width: calc(100vw - .4rem)
-    height: calc(100dvh - .4rem)  
-    border-radius: 1.5rem
+// @include for-size(phone)
+//   .app
+//     width: calc(100vw - .4rem)
+//     height: calc(100dvh - .4rem)  
+//     border-radius: 1.5rem
+
+%tabs
+  display: flex
+  background-color: rgba($secondary, .1)
+  padding: 2px
+  height: 2.5rem
+  box-sizing: border-box
+  border-radius: .75rem
+
+  i
+    width: 1.5rem
+    height: 1.5rem
+    background-color: $secondary
+    mask-size: contain
+
+  button
+    height: 100%
+    box-sizing: border-box
+    display: flex
+    align-items: center
+    gap: .5rem
+    padding: 0 1rem
+    background-color: transparent
+    border: none
+    border-radius: .625rem
+    cursor: pointer
+    font-size: .875rem
+    color: $neutral_90
+    opacity: .8
+
+    &:hover
+      opacity: 1
+
+    &.active
+      background-color: $secondary
+      color: $neutral_10
+      opacity: 1
+      cursor: default
+      i
+        background-color: $neutral_10
 
 
 
+.form-field
+  box-sizing: border-box
+  border-bottom: solid 1px $secondary
+  color: $neutral_90
+  background-color: rgba(white, .5)
+  border-radius: .4rem .4rem 0 0
+  display: flex
+  flex-direction: column
 
+  label
+    font-size: .8rem
+    line-height: 1rem
+    padding: .5rem 1rem 0
+
+  input, select
+    height: 1.5rem
+    box-sizing: border-box
+    background-color: transparent
+    border: none
+    color: $neutral_90
+    font-size: 1rem
+    padding: 0 1rem .5rem
+    flex: 1
+
+    &:focus
+      outline: none
+
+    &::placeholder
+      color: rgba(black, .5)
+
+  &:not(:has([readonly])):hover,
+  &:has(input:focus)
+    box-shadow: inset 0 -1px 0 $secondary
+    background-color: rgba(white, .7)
+    transition: background-color .3s $ease
+
+  &:has([readonly])
+    background-color: rgba($secondary, .1)
+
+  select
+    margin-right: .5rem
+    padding-left: .75rem
+    cursor: pointer
+    &:disabled
+      cursor: default
 

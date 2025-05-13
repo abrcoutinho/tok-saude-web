@@ -1,0 +1,394 @@
+.odonto
+
+	.header
+		hgroup
+			h1 i
+				mask-image: url("../img/icons/tooth.svg")
+
+	.sempreodonto
+		max-width: 75rem
+		margin: 2.5rem auto 0
+		height: 3rem
+		display: flex
+		justify-content: space-between
+		align-items: center
+		border-bottom: solid 1px rgba($secondary, .2)
+
+		figcaption
+			font-size: .875rem
+			color: $neutral_90
+			font-weight: 600
+
+	.search-odonto
+		max-width: 75rem
+		margin: .5rem auto
+		display: flex
+		align-items: center
+		gap: 2rem
+
+		& > i
+			flex: 0 0 2rem
+			height: 2rem
+			background-color: $secondary
+			mask-image: url("../img/icons/magnifier.svg")
+			mask-size: contain
+			mask-repeat: no-repeat
+
+		fieldset
+			flex: 1
+			display: flex
+			gap: .5rem
+
+			div
+				flex: 1
+
+		.search-bt
+			width: 6rem
+			height: 3rem
+			border-radius: 3rem
+			border: none
+			cursor: pointer
+			position: relative
+			background: url("../img/icons/enter-white.svg") no-repeat center $secondary
+			transition: transform .2s
+
+			&:hover
+				transform: scale(1.05)
+			&:disabled
+				cursor: default
+				background-color: rgba($secondary, .2)
+				&:hover
+					transform: scale(1)
+
+	.odonto-box
+		max-width: 75rem
+		margin: 0 auto
+		height: 32rem
+		background-color: rgba(white, .3)
+		border-radius: .75rem .75rem 2rem 2rem
+		box-sizing: border-box
+		color: $neutral_90
+		padding: .5rem 2.5rem
+		overflow-y: auto
+
+		.warning
+			height: 1.75rem
+			background-color: $secondary
+			color: white
+			display: flex
+			gap: .75rem
+			align-items: center
+			justify-content: center
+			border-radius: .25rem
+			position: sticky
+			top: -.5rem
+			z-index: 3
+
+			small
+				font-size: .9rem
+				font-weight: 200
+			b
+				font-weight: 700
+			i
+				flex: 0 0 1rem
+				height: 1rem
+				background-color: white
+				mask-image: url("../img/icons/info.svg")
+				mask-size: contain
+				mask-repeat: no-repeat
+
+		.empty
+			height: 29rem
+			position: relative
+
+			strong
+				width: 16rem
+				font-size: 2.5rem
+				line-height: 2.5rem
+				font-weight: 200
+				color: $secondary
+				position: absolute
+				top: 50%
+				left: 0
+				transform: translateY(-50%)
+				z-index: 2
+
+			svg
+				.secondary
+					fill: $secondary
+				width: 38rem
+				height: auto
+				position: absolute
+				bottom: 0
+				right: 5rem
+
+	table
+		width: 100%
+		border-spacing: 0 2px
+		caption
+			width: 100%
+			span
+				width: 100%
+				height: 4rem
+				display: flex
+				align-items: center
+				justify-content: space-between
+			small
+				font-size: .9rem
+				font-weight: 400
+				display: flex
+				align-items: center
+				gap: .5rem
+			b
+				font-weight: 700
+			i
+				width: 1rem
+				height: 1rem
+				background-color: $secondary
+				mask-image: url("../img/icons/checked.svg")
+				mask-size: contain
+			.clear
+				background-color: transparent
+				border: none
+				color: $neutral_90
+				text-decoration: underline
+				cursor: pointer
+
+		tr
+			background-color: white
+			display: flex
+			border-radius: .5rem
+			padding: 0 0 0 1.25rem
+			position: relative
+
+			&:not(:first-of-type)
+				margin-top: 2px
+
+			&.expanded
+				height: 35.5rem
+				.map
+					display: block
+
+		td
+			height: 4rem
+			display: flex
+			align-items: center
+			justify-content: center
+			gap: 1rem
+
+		.nome
+			flex: 1
+			flex-direction: column
+			gap: 0
+			align-items: flex-start
+			cursor: pointer
+
+			&:hover
+				address
+					text-decoration: underline
+
+			strong
+				line-height: 1.25rem
+			address
+				display: flex
+				align-items: flex-start
+				gap: .25rem
+				font-size: .9rem
+				font-weight: 400
+				font-style: normal
+				line-height: 1rem
+			i
+				flex: 0 0 1rem
+				height: 1rem
+				background-color: $secondary
+				mask-image: url("../img/icons/pin.svg")
+				mask-size: contain
+				mask-repeat: no-repeat
+
+		.espec
+			flex: 0 0 9rem
+			dfn
+				font-size: .75rem
+				line-height: 1rem
+				padding: 0 .5rem
+				outline: solid 1px $secondary
+				border-radius: .25rem
+				color: $secondary
+				text-transform: uppercase
+				font-style: normal
+				font-weight: 800
+				overflow: hidden
+				max-width: 8rem
+				text-overflow: ellipsis
+				white-space: nowrap
+				box-sizing: border-box
+
+		.tel
+			flex: 0 0 10rem
+			i
+				width: 1.25rem
+				height: 1.25rem
+				background-color: $neutral_90
+				mask-image: url("../img/icons/telephone.svg")
+				mask-size: contain
+
+		.whatsapp
+			flex: 0 0 10rem
+			a
+				display: flex
+				align-items: center
+				gap: .5rem
+				color: $neutral_90
+
+				&:hover
+					opacity: .7
+			i
+				width: 1.25rem
+				height: 1.25rem
+				background-color: $neutral_90
+				mask-image: url("../img/icons/whatsapp.svg")
+				mask-size: contain
+
+		.map
+			display: none
+			width: 100%
+			height: calc(100% - 4rem)
+			box-sizing: border-box
+			padding: .5rem 1.25rem
+			position: absolute
+			bottom: 0
+			left: 0
+
+			iframe
+				border: 0
+				width: 100%
+				height: 100%
+				border-radius: 1rem
+				outline: solid 1px rgba($secondary,.2)
+
+
+
+@include for-size(desk_sm)
+	.odonto
+		.sempreodonto
+			max-width: 80vw
+		.search-odonto
+			max-width: 80vw
+		.odonto-box
+			max-width: 80vw
+			height: auto
+
+		table
+			.nome
+				address
+					text-decoration: underline
+
+
+@include for-size(tablet_lg)
+	.odonto
+		.sempreodonto
+			max-width: 90vw
+		.search-odonto
+			max-width: 90vw
+		.odonto-box
+			max-width: 90vw
+			height: auto
+
+			.empty
+				svg
+					right: 0
+
+		table
+			td
+				height: 5rem
+
+
+@include for-size(tablet_md)
+	.odonto
+		.search-odonto
+			fieldset
+				flex-wrap: wrap
+				.form-field
+					&:first-of-type
+						flex: 0 0 50%
+					&:has(#uf)
+						flex: 0 0 10%
+		.odonto-box
+			padding: .5rem
+			.warning
+				height: auto
+				padding: .25rem .5rem
+
+			.empty
+				svg
+					width: 70vw
+
+		table
+			tr
+				flex-wrap: wrap
+				align-content: flex-start
+				padding: 0 1.25rem 1rem
+				&.expanded
+					height: 36rem
+			.nome
+				flex: 1 1 70%
+				height: 4rem
+			.espec
+				flex: 0 0 auto
+				height: 4rem
+			.tel
+				height: 2rem
+			.whatsapp
+				height: 2rem
+			.map
+				height: calc(100% - 7rem)
+
+
+@include for-size(phone)
+	.odonto
+		.search-odonto
+			display: block
+			margin: .5rem auto 2rem
+			fieldset
+				.form-field
+					flex: 0 0 100% !important
+			.search-bt
+				width: 50vw
+				margin: .5rem auto 0
+				display: block
+		.odonto-box
+			padding: 0
+			background-color: transparent
+
+			.empty
+				strong
+					text-align: center
+					top: 4rem
+					left: 50%
+					transform: translateX(-50%)
+				svg
+					width: 85vw
+					right: 50%
+					transform: translateX(50%)
+
+		table
+			tr
+				padding: .75rem 1rem
+			.nome
+				flex: 1 1 50%
+				strong
+					font-size: 1.2rem
+					line-height: 2rem
+
+			.espec
+				align-items: flex-start
+				padding-top: .75rem
+				dfn
+					max-width: 5rem
+			.tel
+				flex: 0 0 50%
+			.whatsapp
+				flex: 0 0 50%
+			.map
+				height: calc(100% - 8rem)
+

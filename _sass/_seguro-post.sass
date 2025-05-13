@@ -1,0 +1,143 @@
+.seguro-post
+
+	.header
+		hgroup
+			h1 i
+				mask-image: url("../img/icons/asterisk.svg")
+
+	article
+		width: calc(100vw - 1rem)
+		max-width: 56rem
+		box-sizing: border-box
+		border-radius: 1.25rem
+		background-color: rgba(white, .5)
+		margin: 2.5rem auto
+		padding: 0 3.5rem
+		color: $neutral_90
+
+		& > header
+			padding-top: 2.5rem
+
+			.back
+				display: flex
+				align-items: center
+				gap: .5rem
+				font-size: 1.25rem
+				line-height: 2rem
+				font-weight: 400
+				color: $neutral_90
+				i
+					width: 1rem
+					height: 1rem
+					transform: rotate(90deg)
+					background-color: $neutral_90
+					mask-image: url("../img/icons/down.svg")
+					mask-size: contain
+					mask-repeat: no-repeat
+				&:hover
+					opacity: .6
+
+		h2
+			font-size: 2rem
+			line-height: 3rem
+			font-weight: 700
+			margin: 1.25rem 0
+
+		h3
+			font-size: 1.5rem
+			line-height: 2rem
+			font-weight: 700
+			margin: 1.25rem 0
+
+		& > em
+			font-size: 1rem
+			font-weight: 800
+			text-transform: uppercase
+			line-height: 1.25rem
+			padding: 0 .5rem
+			border: solid 1px $secondary
+			border-radius: .25rem
+			color: $secondary
+
+		p
+			font-size: 1.25rem
+			line-height: 2rem
+			font-weight: 400
+			margin: 2.5rem 0
+
+		ul
+			list-style-type: circle
+			padding-left: 1.5rem
+			font-size: 1.25rem
+			line-height: 2rem
+			font-weight: 400
+			margin: 2.5rem 0
+
+		.tel
+			font-size: 1.25rem
+			font-weight: 700
+			line-height: 1.5rem
+			color: $neutral_90
+			background-color: rgba($secondary, .1)
+			border-radius: .75rem
+			border: none
+			height: 2.5rem
+			padding: 0 .75rem
+			display: flex
+			align-items: center
+			gap: .75rem
+			cursor: pointer
+
+			i
+				width: 1.5rem
+				height: 1.5rem
+				background-color: $neutral_90
+				mask-image: url("../img/icons/telephone.svg")
+				mask-size: contain
+				mask-repeat: no-repeat
+			&:hover
+				background-color: rgba($secondary, .2)
+
+		.contatos
+			margin: 2.5rem 0
+			display: flex
+			align-items: center
+			gap: 2.5rem
+			flex-wrap: wrap
+
+			small
+				font-size: .9rem
+				line-height: 1.25rem
+				font-style: normal
+
+		.info
+			padding: 2.5rem 0
+			display: flex
+			align-items: flex-start
+			gap: .75rem
+			line-height: 1rem
+			i
+				flex: 0 0 1rem
+				height: 1rem
+				background-color: $neutral_90
+				mask-image: url("../img/icons/info.svg")
+				mask-size: contain
+				mask-repeat: no-repeat
+
+
+
+@include for-size(tablet_lg)
+	.seguro-post
+		article
+			max-width: 80vw
+
+@include for-size(tablet_md)
+	.seguro-post
+		article
+			max-width: 90vw
+
+@include for-size(phone)
+	.seguro-post
+		article
+			padding: 0 1.5rem
+

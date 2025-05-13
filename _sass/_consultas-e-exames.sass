@@ -1,0 +1,133 @@
+.consultas
+	overflow-y: hidden
+
+	.header
+		hgroup
+			h1 i
+				mask-image: url("../img/icons/medical.svg")
+
+	.tabs-container
+		max-width: $main_column
+		margin: 2.5rem auto .5rem
+		display: flex
+		justify-content: center
+		position: relative
+
+		.tabs
+			@extend %tabs
+			button
+				&.tab-rede-credenciada i
+					mask-image: url("../img/icons/medical.svg")
+				&.tab-agendamento-presencial i
+					mask-image: url("../img/icons/agenda.svg")
+
+	.box
+		background-color: white
+		padding-top: 4.5rem
+		position: relative
+		height: 36rem
+
+	.contato-consultas
+		width: 100%
+		height: 4.5rem
+		box-sizing: border-box
+		padding: 0 2.5rem
+		position: absolute
+		top: 0
+		left: 0
+		background-color: rgba(white, .96)
+		display: flex
+		align-items: center
+		justify-content: space-between
+		border-radius: 2.5rem 2.5rem 0 0
+
+		&::after
+			content: ''
+			width: calc(100% - 5rem)
+			height: 1px
+			background-color: $neutral_10
+			position: absolute
+			bottom: 0
+			left: 2.5rem
+
+		address
+			display: flex
+			align-items: center
+			gap: .5rem
+			color: $neutral_90
+			font-style: normal
+
+			strong
+				font-size: 1.25rem
+
+			a
+				color: $neutral_90
+				display: flex
+				align-items: center
+				gap: .5rem
+
+			i
+				width: 1.5rem
+				height: 1.5rem
+				background-color: $neutral_90
+				mask-repeat: no-repeat
+				mask-size: contain
+
+			&:first-of-type i
+				mask-image: url("../img/icons/smartphone.svg")
+			&:last-of-type i
+				mask-image: url("../img/icons/whatsapp.svg")
+
+
+
+	iframe
+		width: 100%
+		height: 100%
+		border-radius: 2rem
+		overflow: hidden
+
+
+		&:last-of-type
+			display: none
+
+
+
+@include for-size(desk_sm)
+	.consultas
+		overflow-y: auto
+		.box
+			height: 80rem
+			max-width: 90vw
+
+
+@include for-size(tablet_lg)
+	.consultas
+		display: flex
+		flex-direction: column
+
+		.header
+			width: 100%
+		.tabs-container
+			width: 100%
+			margin: 1rem auto .5rem
+		.box
+			width: 100%
+			flex: 1 0 0
+		.footer
+			margin: .5rem 0
+
+		iframe
+			overflow-y: auto
+
+@include for-size(phone)
+	.consultas
+		.box
+			padding-top: 3.5rem
+		.contato-consultas
+			height: 3.5rem
+			padding: 0 1.5rem
+			address span
+				display: none
+			address strong
+				font-size: 1rem
+

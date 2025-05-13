@@ -1,6 +1,6 @@
 .account-header
 	max-width: $main_column
-	margin: 2.5rem auto 0
+	margin: 2.5rem auto .5rem
 	display: flex
 	justify-content: center
 	position: relative
@@ -27,86 +27,15 @@
 			opacity: .7
 
 	.tabs
-		display: flex
-
+		@extend %tabs
 		button
-			height: 3rem
-			box-sizing: border-box
-			display: flex
-			align-items: center
-			gap: .5rem
-			padding: 0 1rem
-			background-color: transparent
-			border: none
-			cursor: pointer
-			font-size: .875rem
-			color: $neutral_90
-			border-bottom: solid 2px $neutral_10
-			opacity: .4
-
-			&:hover
-				opacity: 1
-
-			&.active
-				border-bottom: solid 2px $secondary
-				opacity: 1
-				cursor: default
-
 			&.tab-registration i
 				mask-image: url("../img/icons/person.svg")
 			&.tab-credentials i
 				mask-image: url("../img/icons/lock.svg")
 
-		i
-			width: 1.5rem
-			height: 1.5rem
-			background-color: $secondary
-			mask-size: contain
 
-
-
-.form-field
-	box-sizing: border-box
-	border-bottom: solid 1px $secondary
-	color: $neutral_90
-	background-color: rgba(white, .5)
-	border-radius: .4rem .4rem 0 0
-	display: flex
-	flex-direction: column
-
-	label
-		font-size: .8rem
-		line-height: 1rem
-		padding: .5rem 1rem 0
-
-	input, select
-		height: 1.5rem
-		box-sizing: border-box
-		background-color: transparent
-		border: none
-		color: $neutral_90
-		font-size: 1rem
-		padding: 0 1rem .5rem
-		flex: 1
-
-		&:focus
-			outline: none
-
-		&::placeholder
-			color: rgba(black, .5)
-
-	&:not(:has(input[readonly])):hover,
-	&:has(input:focus)
-		box-shadow: inset 0 -1px 0 $secondary
-		background-color: rgba(white, .7)
-		transition: background-color .3s $ease
-
-	&:has(input[readonly])
-		background-color: rgba($secondary, .1)
-
-
-
-.account
+.box.account
 	justify-content: center
 	overflow-y: auto
 
@@ -161,10 +90,6 @@
 			input[name="numero"]
 				width: 7rem
 
-		select
-			width: 9rem
-			margin-right: .5rem
-
 
 
 	.credentials
@@ -183,6 +108,7 @@
 		color: $neutral_10
 		font-size: .875rem
 		text-transform: uppercase
+		display: block
 		cursor: pointer
 		border: none
 		margin-bottom: 4rem
@@ -221,7 +147,7 @@
 		select
 			width: 96% !important
 
-	.account
+	.box.account
 		.save
 			margin: 0 auto 4rem
 

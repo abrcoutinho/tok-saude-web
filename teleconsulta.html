@@ -1,0 +1,76 @@
+---
+layout: default
+title: Teleconsulta 24h
+class: teleconsulta
+---
+
+<div class="captions">
+	<span></span>
+	<span>
+		<label>Paciente</label>
+		<label id="labelChange">Consulta</label>
+	</span>
+	<span>
+		<label>Agendamentos</label>
+	</span>
+</div>
+
+<div class="box">
+
+	<article class="instructions">
+		<button type="button" title="Histórico" onclick="historyPopup();"><i></i>Histórico</button>
+		<div>
+			<h2 onclick="instructions();"><i></i>Instruções</h2>
+			<p>Selecione um paciente e solicite atendimento com um clínico geral ou pediatra plantonista.</p>
+			<p>Se necessário o paciente será encaminhado para uma dentre mais de XX <u class="specialities-link" title="Especialidades médicas">especialidades</u> médicas.</p>
+			{% include plant.html %}
+		</div>
+	</article>
+
+	<!-- PA status: available | waiting | ready -->
+	<form class="emergency-care available">
+		<!-- <label>Paciente</label> -->
+
+		<!--mobile only--><label id="labelChange2">Paciente</label>
+		<!--mobile only--><button type="button" class="patient-selected" onclick="mobPatientList();">José da Silva</button>
+
+		<ul class="patients-list">
+			<li>
+				<button type="button" class="active">
+					<em>José</em>
+					<small>da Silva</small>
+				</button>
+			</li>
+			<li>
+				<button type="button">
+					<em>Maurício</em>
+					<small>da Silva</small>
+				</button>
+			</li>
+			<li>
+				<button type="button">
+					<em>Olívia</em>
+					<small>da Silva</small>
+				</button>
+			</li>
+		</ul>
+
+		{% include meeting-available.html %}
+		{% include meeting-card.html %}
+
+		{% include popup-history.html %}
+		{% include popup-specialties.html %}
+	</form>
+
+	<!-- Schedule status: null | setted-up | waiting | ready -->
+	<aside class="schedule null">
+		<label>Agendamentos</label>
+		<div class="schedule-null-card">
+			<i></i>
+			<small>Nenhuma consulta agendada</small>
+		</div>
+
+		{% include meeting-card.html %}
+	</aside>
+</div>
+

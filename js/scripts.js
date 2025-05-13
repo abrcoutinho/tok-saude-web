@@ -28,21 +28,6 @@ function instructions() {
 }
 
 
-// popup specialities
-(function () {
-
-  const popupSpecialities = document.querySelector('.popup-specialties');
-
-  document.querySelector('.specialities-link').addEventListener("click", function(event){
-    popupSpecialities.classList.add("visible");
-  });
-
-  document.querySelector('.popup-specialties .close').addEventListener("click", function(event){
-    popupSpecialities.classList.remove("visible");
-  });
-
-})();
-
 
 // popup history
 const popupHistory = document.querySelector('.popup-history');
@@ -98,7 +83,7 @@ function showUserFloatingMenu() {
 }
 
 // Notification popup
-const bellButton = document.querySelector('.header-account .notification button')
+const bellButton = document.querySelector('.header .account .notification button')
 const popupNotif = document.querySelector('.popup-notifications');
 
 function showPopupNotifications() {
@@ -122,4 +107,18 @@ window.addEventListener('click', function(e){
 
 
 
+// popup specialities
+(function () {
+
+  const popupSpecialities = document.querySelector('.popup-specialties');
+
+  document.querySelector('.specialities-link').addEventListener("click", function(event){
+    popupSpecialities.classList.add("visible");
+  });
+
+  document.querySelector('.popup-specialties .close').addEventListener("click", function(event){
+    popupSpecialities.classList.remove("visible");
+  });
+
+})();
 

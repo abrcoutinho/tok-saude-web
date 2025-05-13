@@ -1,0 +1,50 @@
+---
+layout: default
+title: Consultas e exames
+class: consultas
+---
+
+<div class="tabs-container">
+	<div class="tabs">
+		<button type="button" title="Pesquisa" class="tab-rede-credenciada tablinks active" onclick="consultasForms(event, 'rede-credenciada')" id="defaultOpen"><i></i>Pesquisa</button>
+		<button type="button" title="Agendamentos" class="tab-agendamento-presencial tablinks" onclick="consultasForms(event, 'agendamento-presencial')"><i></i>Agendamentos</button>
+	</div>
+</div>
+
+
+<div class="box">
+
+	<header class="contato-consultas">
+		<address><i></i><span>Agende por telefone: </span><strong>0800 025 8891</strong></address>
+		<address><a href="https://api.whatsapp.com/send?phone=5508000258891&text=Ol%C3%A1,%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es" target="_blank" title="WhasApp"><u>WhasApp</u><i></i></a></address>
+	</header>
+
+	<!-- Rede credenciada -->
+	<iframe id="rede-credenciada" class="rede-credenciada tabcontent" src="https://z8u0zwbfqujqnz6-rmsdbhml02.adb.sa-saopaulo-1.oraclecloudapps.com/ords/f?p=140:50:::::PCPF,PCONTRATO,P50_TIPO,PCALLBACK,P50_IBGE,P50_MOBILE,P50_RETORNO_QUERY,P50_CEP,P50_ESTADO,P50_CIDADE,P50_ESPECIALIDADE:98446146860,100578151,1,telemedicina%252Etoksaude%252Ecom%252Ebr" title="Rede credenciada"></iframe>
+
+	<!-- Agendamentos -->
+	<iframe id="agendamento-presencial" class="agendamento-presencial tabcontent" src="https://z8u0zwbfqujqnz6-rmsdbhml02.adb.sa-saopaulo-1.oraclecloudapps.com/ords/f?p=188:2:::::P0_CPF,P0_ID_CLIENTE_CONTRATO,P0_TIPO_PLANO,P0_COR_1,P0_COR_2,P0_COR_3,P0_COR_4,P0_COR_5,P0_CALLBACK:98446146860,100578151,102139" title="Agendamentos"></iframe>
+
+</div>
+
+<!-- Tabs -->
+<script type="text/javascript">
+	function consultasForms(evt, iframeName) {
+
+	  var i, tabcontent, tablinks;
+
+	  tabcontent = document.getElementsByClassName("tabcontent");
+	  for (i = 0; i < tabcontent.length; i++) {
+	    tabcontent[i].style.display = "none";
+	  }
+
+	  tablinks = document.getElementsByClassName("tablinks");
+	  for (i = 0; i < tablinks.length; i++) {
+	    tablinks[i].className = tablinks[i].className.replace(" active", "");
+	  }
+
+	  document.getElementById(iframeName).style.display = "block";
+	  evt.currentTarget.className += " active";
+	}
+</script>
+
